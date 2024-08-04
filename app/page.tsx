@@ -1,9 +1,10 @@
 import { NextPage } from "next";
-
 import Link from "next/link";
 
+import ImageSlideShow from "@/components/images/image-slideshow";
+
 const ctaLinkStyle1 =
-  "inline-block mt-4 py-2 px-4 rounded-md text-white font-bold no-underline hover:bg-gradient-to-r hover:from-[#fd4715] hover:to-[#f9b241] first:bg-transparent first:font-normal first:text-[#ff9b05] first:pl-0 first:hover:bg-transparent first:hover:text-[#f9b241]";
+  "inline-block mt-4 py-2 px-4 rounded-md text-white font-bold no-underline  first:bg-transparent first:font-normal first:text-[#ff9b05] first:pl-0 first:hover:bg-transparent first:hover:text-[#f9b241]";
 const ctaLinkStyle2 =
   "inline-block mt-4 py-2 px-4 rounded-md bg-gradient-to-r from-[#f9572a] to-[#ff9b05] text-white font-bold no-underline hover:bg-gradient-to-r hover:from-[#fd4715] hover:to-[#f9b241] first:bg-transparent first:font-normal first:text-[#ff9b05] first:pl-0 first:hover:bg-transparent first:hover:text-[#f9b241]";
 
@@ -15,7 +16,9 @@ const Home: NextPage = () => {
     <>
       <header className="flex gap-12 my-12 mx-auto w-[90%] max-w-[75rem]">
         {/* slide show */}
-        <div className="w-[40rem] h-[25rem] "></div>
+        <div className="w-[40rem] h-[25rem] ">
+          <ImageSlideShow />
+        </div>
 
         {/* hero container */}
         <div>
