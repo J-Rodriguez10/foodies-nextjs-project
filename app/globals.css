@@ -37,21 +37,20 @@ body {
 Global Styles: Layout
 ===========================
  */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 body {
   margin: 0;
   background: radial-gradient(#282c34, #282c34);
 }
-
 
 /* .not-found,
 .error {
@@ -107,5 +106,27 @@ Global Styles: Font Family
 =============================
  */
 .font-montserrat {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* 
+==================================
+Global Styles: Letter/Word Spacing
+==================================
+ */
+
+.l-spacing-s {
+  letter-spacing: 0.03em;
+}
+
+.l-spacing-m {
+  letter-spacing: 0.1em;
+}
+
+.w-spacing-s {
+  word-spacing: 0.05em;
+}
+
+.w-spacing-m {
+  word-spacing: 0.4em;
 }
