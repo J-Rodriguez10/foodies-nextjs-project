@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import logoImg from "@/assets/logo.png";
 import MainHeaderBackground from "./main-header-background";
+import NavLink from "./nav-link";
 
 const MainHeader: FC = () => {
   return (
@@ -22,18 +23,14 @@ const MainHeader: FC = () => {
           />
           NextLevel Food
         </Link>
-
+        {/* navbar */}
         <nav className="">
           <ul className="list-none m0 p0 flex gap-6 text-5 text-white">
             <li>
-              <Link className="nav-link" href="/meals">
-                Browse Meals
-              </Link>
+              <NavLink href="/meals">Browse Meals</NavLink>
             </li>
             <li>
-              <Link className="nav-link" href="/community">
-                Foodies Community
-              </Link>
+              <NavLink href="/community">Foodies Community</NavLink>
             </li>
           </ul>
         </nav>
