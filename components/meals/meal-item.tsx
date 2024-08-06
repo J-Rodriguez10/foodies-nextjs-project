@@ -3,9 +3,7 @@ import Image from "next/image";
 import { FC } from "react";
 
 import classes from "./meal-item.module.css";
-import { Meal } from "./meals-grid";
-
-
+import { Meal } from "../interfaces/meals-interfaces";
 
 const MealItem: FC<Meal> = ({
   id,
