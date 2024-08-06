@@ -109,11 +109,11 @@ Global Styles: Text Gradient
 
 /* This style is applied when you want the text of an element to be highlighted with a gradient  */
 .highlight {
-  background: linear-gradient(90deg, #f9572a, #ff8a05);
-  background-clip: text;
+  background: linear-gradient(90deg, #f9572a, #ffc905);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 /* 
 =============================
@@ -146,9 +146,6 @@ Global Styles: Letter/Word Spacing
   word-spacing: 0.4em;
 }
 
-
-
-
 /* 
 ==================================
 Global Styles: Animations
@@ -156,7 +153,6 @@ Global Styles: Animations
  */
 
 /* Tailwind does not support letter and word spacing */
-
 
 .loading-animation {
   text-align: center;
