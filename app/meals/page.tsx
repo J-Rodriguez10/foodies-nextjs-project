@@ -1,15 +1,18 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import { FC, Suspense } from "react";
 
 import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals } from "@/lib/meals";
 import { Meal } from "@/components/interfaces/meals-interfaces";
 
-
-
-const MealsPage: NextPage =  async () => {
+const Meals: FC = async () => {
   const meals: Meal[] = await getMeals();
 
+  return <MealsGrid meals={meals} />;
+};
+
+const MealsPage: NextPage = () => {
   return (
     <>
       {/* meals page header */}
@@ -33,7 +36,15 @@ const MealsPage: NextPage =  async () => {
 
       {/* meals grid */}
       <main>
-        <MealsGrid meals={meals} />
+        <Suspense
+          fallback={
+            <p className="text-center animate-loading loading-animation">
+              Fetching Meals
+            </p>
+          }
+        >
+          <Meals />
+        </Suspense>
       </main>
     </>
   );
