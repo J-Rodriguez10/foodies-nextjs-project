@@ -91,6 +91,7 @@ Global Styles: Text Gradient
   @apply no-underline text-[#ddd6cb] font-bold py-2 px-4 rounded-lg;
 }
 
+/* These styles apply a text gradient to text link when hovered or active */
 .nav-link:hover,
 .nav-link:active {
   background: linear-gradient(90deg, #ff8a05, #f9b331);
@@ -106,7 +107,14 @@ Global Styles: Text Gradient
   -webkit-text-fill-color: transparent;
 }
 
- 
+/* This style is applied when you want the text of an element to be highlighted with a gradient  */
+.highlight {
+  background: linear-gradient(90deg, #f9572a, #ff8a05);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* 
 =============================
 Global Styles: Font Family
