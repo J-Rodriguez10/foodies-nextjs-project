@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 import { getMeal } from "@/lib/meals";
 import { Meal } from "@/components/interfaces/meals-interfaces";
@@ -14,6 +15,10 @@ interface MealDetailsPageProps {
 
 const MealDetailsPage: NextPage<MealDetailsPageProps> = ({ params }) => {
   const meal: Meal = getMeal(params.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br />")
 
