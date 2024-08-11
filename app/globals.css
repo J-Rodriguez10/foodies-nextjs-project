@@ -47,6 +47,7 @@ html {
   font-family: "Quicksand", sans-serif;
 }
 
+
 body {
   margin: 0;
   background: radial-gradient(#282c34, #282c34);
@@ -114,14 +115,17 @@ Global Styles: Text Gradient
   -webkit-text-fill-color: transparent;
 }
 
-
 /* 
 =============================
 Global Styles: Font Family
 =============================
  */
 .font-montserrat {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.font-quicksand {
+  font-family: "Quicksand", sans-serif !important;
 }
 
 /* 
@@ -153,8 +157,6 @@ Global Styles: Animations
 ==================================
  */
 
-
-
 .loading-animation {
   text-align: center;
   animation: loading 1.2s ease-in-out infinite;
@@ -173,7 +175,6 @@ Global Styles: Animations
 }
 
 /*[mealSlug] page animations */
-
 
 /* fade-slide-in-from-left: Fades in and slides the element in from the left. */
 .fade-slide-in-from-left-animation {
@@ -209,7 +210,7 @@ Global Styles: Animations
 
 /* fade-slide-in-from-bottom: Fades in and slides the element in from the bottom. */
 
-.fade-slide-in-from-bottom-animation{
+.fade-slide-in-from-bottom-animation {
   animation: fade-slide-in-from-bottom 1s ease-out forwards;
 }
 
