@@ -1,8 +1,12 @@
 import { FC } from "react";
 
 import MealItem from "./meal-item";
-import { MealsProp } from "../interfaces/meals-interfaces";
+import { Meal } from "../interfaces/meals-interfaces";
 
+
+export interface MealsProp {
+  meals: Meal[];
+}
 
 const MealsGrid: FC<MealsProp> = ({ meals }) => {
   return (

@@ -1,7 +1,7 @@
 export interface Meal {
-  id: string;
+  id?: string | undefined;
+  slug?: string;
   title: string;
-  slug: string;
   image: string;
   summary: string;
   creator: string;
@@ -9,9 +9,8 @@ export interface Meal {
   instructions: string;
 }
 
-// Define the type for a list of meals
-export type Meals = Meal[];
 
-export interface MealsProp {
-  meals: Meal[];
+// This interface is used for when a meal is being uploaded to the database
+export interface MealUpload extends Omit<Meal, "image"> {
+  image: File; // Represents the uploaded image file before saving
 }
