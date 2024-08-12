@@ -1,7 +1,11 @@
+"use client";
+
+import { useActionState } from "react";
+
 import { Meal } from "@/components/interfaces/meals-interfaces";
 import ImagePicker from "@/components/meals/image-picker";
 import MealsFormSubmitButton from "@/components/meals/meals-form-submit";
-import { shareMeal } from "@/lib/server-actions";
+import { shareMeal, ShareMealState } from "@/lib/server-actions";
 
 const labelStyles =
   "block mb-2 text-base font-montserrat uppercase text-[#b3aea5] font-bold";
@@ -10,6 +14,10 @@ const inputStyles =
   "block w-full p-2 px-4 rounded border border-[#454952] bg-[#1c2027] text-lg font-montserrat text-[#ddd6cb] focus:outline-[#f99f2a] focus:bg-[#1f252d]";
 
 export default function ShareMealPage() {
+  const [state, formAction] = useActionState<ShareMealState, FormData>(
+    shareMeal,
+    { message: null }
+  );
 
   return (
     <>
@@ -24,7 +32,7 @@ export default function ShareMealPage() {
       </header>
 
       <main className="w-[90%] max-w-[75rem] my-12 mx-auto text-white">
-        <form className="max-w-[50rem]" action={shareMeal}>
+        <form className="max-w-[50rem]" action={formAction}>
           {/* row container */}
           <div className="flex gap-4">
             <p className="w-full">
@@ -90,6 +98,8 @@ export default function ShareMealPage() {
             ></textarea>
           </p>
           <ImagePicker label="Your image" name="image" />
+          {state.message && <p>{state.message}</p>}
+
           <p className="text-right">
             <MealsFormSubmitButton />
           </p>

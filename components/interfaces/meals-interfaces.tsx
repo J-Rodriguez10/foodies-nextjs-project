@@ -10,7 +10,9 @@ export interface Meal {
 }
 
 
-// This interface is used for when a meal is being uploaded to the database
+// This interface is used when a meal is being uploaded to the database
 export interface MealUpload extends Omit<Meal, "image"> {
   image: File; // Represents the uploaded image file before saving
 }
+
+
