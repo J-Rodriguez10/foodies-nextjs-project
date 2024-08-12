@@ -1,5 +1,6 @@
 import { Meal } from "@/components/interfaces/meals-interfaces";
 import ImagePicker from "@/components/meals/image-picker";
+import MealsFormSubmitButton from "@/components/meals/meals-form-submit";
 import { shareMeal } from "@/lib/server-actions";
 
 const labelStyles =
@@ -9,7 +10,6 @@ const inputStyles =
   "block w-full p-2 px-4 rounded border border-[#454952] bg-[#1c2027] text-lg font-montserrat text-[#ddd6cb] focus:outline-[#f99f2a] focus:bg-[#1f252d]";
 
 export default function ShareMealPage() {
-
 
   return (
     <>
@@ -91,12 +91,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label="Your image" name="image" />
           <p className="text-right">
-            <button
-              className="border-0 py-3 px-8 bg-gradient-to-r from-[#f9572a] to-[#ff9b05] text-white rounded-sm cursor-pointer text-lg shadow-md hover:bg-gradient-to-r hover:from-[#fd4715] hover:to-[#f9b241] focus:bg-gradient-to-r focus:from-[#fd4715] focus:to-[#f9b241] disabled:bg-[#ccc] disabled:text-[#979797] disabled:cursor-not-allowed"
-              type="submit"
-            >
-              Share Meal
-            </button>
+            <MealsFormSubmitButton />
           </p>
         </form>
       </main>
