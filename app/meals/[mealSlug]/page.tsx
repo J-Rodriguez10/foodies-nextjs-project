@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -6,12 +6,29 @@ import { getMeal } from "@/lib/meals";
 import { Meal } from "@/components/interfaces/meals-interfaces";
 
 
-interface MealDetailsPageProps {
-  params : {
-    mealSlug: string; // represents the dynamic part of the route
-  }
+interface GenerateMetadataParams {
+  params: {
+    mealSlug: string;
+  };
 }
 
+export const generateMetadata = ({ params }:GenerateMetadataParams): Metadata => {
+  const meal: Meal | undefined = getMeal(params.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+};
+
+interface MealDetailsPageProps {
+  params: {
+    mealSlug: string; // represents the dynamic part of the route
+  };
+}
 
 const MealDetailsPage: NextPage<MealDetailsPageProps> = ({ params }) => {
   const meal: Meal = getMeal(params.mealSlug);
@@ -20,7 +37,7 @@ const MealDetailsPage: NextPage<MealDetailsPageProps> = ({ params }) => {
     notFound();
   }
 
-  meal.instructions = meal.instructions.replace(/\n/g, "<br />")
+  meal.instructions = meal.instructions.replace(/\n/g, "<br />");
 
   return (
     <>

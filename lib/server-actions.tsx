@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 import { MealUpload } from "@/components/interfaces/meals-interfaces";
 import { saveMeal } from "./meals";
@@ -44,10 +45,7 @@ export async function shareMeal(
 
   // Save the meal
   await saveMeal(meal);
-
+  revalidatePath("/meals");
   // Redirect the user after successful submission
   redirect("/meals");
-
-  // Return the new state (or the same state if no change is needed)
-  return { message: null };
 }

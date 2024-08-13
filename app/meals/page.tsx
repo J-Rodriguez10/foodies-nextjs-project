@@ -1,10 +1,16 @@
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 import Link from "next/link";
 import { FC, Suspense } from "react";
 
 import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals } from "@/lib/meals";
 import { Meal } from "@/components/interfaces/meals-interfaces";
+
+
+export const metadata: Metadata = {
+  title: "All Meals",
+  description: "Browse the delicious meals shared by our vibrant community",
+};
 
 const Meals: FC = async () => {
   const meals: Meal[] = await getMeals();

@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NextLevel Food",
-  description: "With Typescript and Tailwind!",
+  description: "Portfolio project using Tailwind and Typescript",
 };
 
 export default function RootLayout({
