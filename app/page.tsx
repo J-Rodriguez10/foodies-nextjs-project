@@ -32,14 +32,20 @@ const Home: NextPage = () => {
 
           {/* cta */}
           <div className="text-xl flex gap-4">
-            <Link className={ctaLinkStyle1} href="./community">Join The Community</Link>
-            <Link className={ctaLinkStyle2} href="./meals">Explore Meals</Link>
+            <Link className={ctaLinkStyle1} href="./community">
+              Join The Community
+            </Link>
+            <Link className={ctaLinkStyle2} href="./meals">
+              Explore Meals
+            </Link>
           </div>
         </div>
       </header>
-      <main>
-        <section className={sectionStyles}>
-          <h2>How it works</h2>
+      <main className="pb-8 flex flex-col gap-1">
+        <section className={`${sectionStyles}`}>
+          <h2 className="text-[1.5rem] uppercase text-bold mb-5">
+            How it works
+          </h2>
           <p>
             NextLevel Food is a platform for foodies to share their favorite
             recipes with the world. It&apos;s a place to discover new dishes,
@@ -52,7 +58,9 @@ const Home: NextPage = () => {
         </section>
 
         <section className={sectionStyles}>
-          <h2>Why NextLevel Food?</h2>
+          <h2 className="text-[1.5rem] uppercase text-bold mb-5">
+            Why NextLevel Food?
+          </h2>
           <p>
             NextLevel Food is a platform for foodies to share their favorite
             recipes with the world. It&apos;s a place to discover new dishes,

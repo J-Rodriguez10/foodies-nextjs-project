@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { useFormState } from "react-dom";
 
 import { Meal } from "@/components/interfaces/meals-interfaces";
 import ImagePicker from "@/components/meals/image-picker";
@@ -14,7 +15,7 @@ const inputStyles =
   "block w-full p-2 px-4 rounded border border-[#454952] bg-[#1c2027] text-lg font-montserrat text-[#ddd6cb] focus:outline-[#f99f2a] focus:bg-[#1f252d]";
 
 export default function ShareMealPage() {
-  const [state, formAction] = useActionState<ShareMealState, FormData>(
+  const [state, formAction] = useFormState<ShareMealState, FormData>(
     shareMeal,
     { message: null }
   );
